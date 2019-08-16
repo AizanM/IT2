@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+    .innpakning {
+      width: 800px;
+      background-color: #404040;
+      margin: auto;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    .topptekst {
+      flex-basis: 100%;
+      height: 120px;
+      background-color: inherit;
+      padding: 5px;
+      margin: 5px:
+      order:1;
+    }
+    .meny {
+      flex-basis:200px;
+      background-color: #f04605;
+      padding: 5px;
+      margin: 5px;
+      order: 2;
+    }
+    .innhold{
+      background-color: #909090;
+      padding: 5px;
+      margin: 5px;
+      flex: 1;
+      order: 3;
+    }
+  </style>
+  </head>
+  <body>
+<div class="innpakning">
+  <div class="topptekst"><!--her kan vi plassere et bilde eller skrive overskrifter--> Vi kan plassere et bilde her
+  </div>
+  <div class="meny">
+Her kan vi lage en meny.
+  </div>
+  <div class="innhold">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin et ultrices nibh. Sed diam orci, interdum ac lectus sed, ornare auctor tellus. Nullam accumsan tempor quam, eget accumsan augue vehicula eu. Fusce suscipit nibh non eros imperdiet elementum. Suspendisse pretium vitae lectus quis tempor. Pellentesque tristique mattis ipsum sed tempus. Aliquam vel rutrum lectus. Phasellus dui magna, consectetur a tortor eget, eleifend eleifend neque. Etiam eu erat ac ipsum laoreet ultricies. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce eget nisi rutrum, semper elit non, tempor enim. Nam vitae est maximus, sollicitudin magna facilisis, pretium orci. Mauris in ex et felis ultricies egestas eu sit amet risus.
+
+  </div>
+
+</div>
+  </body>
+</html>
