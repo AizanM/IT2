@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Tilfeldige bilder</h1>
+<p>Her skal komme noe tekst...</p>
+  <img src = "Bilder/skog.jpg" id ="bilde" alt="fgbgdjgvdfb">
+  <script>
+    var bilder = ["bilder/skog.jpg","bilder/hund.jpg", "bilder/geit.png"];
+    var bilde = document.getElementById("bilde");
+    var tilfeldig = Math.random()*2;
+    var tilfeldigAvrundet = Math.round(tilfeldig);
+    console.log(tilfeldigAvrundet);
+    bilde.src=bilder[tilfeldigAvrundet];
+  </script>
+  </body>
+</html>
