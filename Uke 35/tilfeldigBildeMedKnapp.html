@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+<h1>Hvordan bytte bilde med Javascript</h1>
+<button type="button" name="button">Trykk her!</button>
+<img src="bilder/hund.jpg" id="bilde" alt="">
+<script type="text/javascript">
+var bilder = document.querySelector("#bilde");
+var tilfeldigeBilder =["bilder/skog.jpg", "bilder/bil.png","bilder/blaa.png","bilder/geit.png"]
+var tall=Math.random()*3;var avrundetTall = Math.round(tall)
+console.log(avrundetTall)
+bilder.src=tilfeldigeBilder[tall];
+</script>
+  </body>
+</html>
