@@ -6,14 +6,19 @@
   </head>
   <body>
 <h1>Hvordan bytte bilde med Javascript</h1>
-<button type="button" name="button">Trykk her!</button>
-<img src="bilder/hund.jpg" id="bilde" alt="">
+<div><button id="button" name="button">Bytt bilde</button></div>
+<figure>
+  <img src="./bilder/skog.jpg" id="bilde" alt=""></figure>
+
 <script type="text/javascript">
-var bilder = document.querySelector("#bilde");
-var tilfeldigeBilder =["bilder/skog.jpg", "bilder/bil.png","bilder/blaa.png","bilder/geit.png"]
-var tall=Math.random()*3;var avrundetTall = Math.round(tall)
-console.log(avrundetTall)
-bilder.src=tilfeldigeBilder[tall];
+var knapp = document.getElementById("button");
+knapp.onclick = function() {
+    var bilder = document.querySelector("#bilde");
+    var tilfeldigeBilder =["./bilder/skog.jpg", "./bilder/bil.png","./bilder/blaa.png","./bilder/geit.png"]
+    var tall=Math.random()*3;var avrundetTall = Math.round(tall)
+    console.log(avrundetTall)
+    bilder.src=tilfeldigeBilder[avrundetTall];
+    }
 </script>
   </body>
 </html>
