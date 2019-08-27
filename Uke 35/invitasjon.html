@@ -1,0 +1,20 @@
+<meta charset="utf-8">
+  <title></title>
+</head>
+<body>
+<h1>Invitasjon</h1>
+<p>Hei, <span class ="invitasjon"></span>. Du inviteres til å feire
+bursdagen sammen med meg.</p>
+<p> <span class ="invitasjon"></span>, husk å ta med egen matpakke!</p>
+<p>Dessuten, <span class ="invitasjon"></span> bla, bla, bla. </p>
+<script type="text/javascript">
+//kommentar
+
+var navn=prompt("Hvem skal inviteres?");
+var invitasjonen=document.getElementsByClassName("invitasjon");
+//gjør om til stor forbokstav
+var navn = navn.charAt(0).toUpperCase()+navn.slice(1).toLowerCase();
+invitasjonen.innerHTML=navn;
+</script>
+</body>
+</html>

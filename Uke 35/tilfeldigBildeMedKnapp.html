@@ -15,8 +15,8 @@ var knapp = document.getElementById("button");
 knapp.onclick = function() {
     var bilder = document.querySelector("#bilde");
     var tilfeldigeBilder =["./bilder/skog.jpg", "./bilder/bil.png","./bilder/blaa.png","./bilder/geit.png"]
-    var tall=Math.random()*3;var avrundetTall = Math.round(tall)
-    console.log(avrundetTall)
+    var tall=Math.random()*3;var avrundetTall = Math.round(tall);
+    //console.log(Math.floor(Math.random()*10)+5);
     bilder.src=tilfeldigeBilder[avrundetTall];
     }
 </script>
