@@ -1,20 +1,29 @@
-<meta charset="utf-8">
-  <title></title>
-</head>
-<body>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
 <h1>Invitasjon</h1>
-<p>Hei, <span class ="invitasjon"></span>. Du inviteres til å feire
+<p>Hei, <b><span class ="invitasjon"></span></b>. <b><span class ="invitasjon"></span></b>, du inviteres til å feire
 bursdagen sammen med meg.</p>
-<p> <span class ="invitasjon"></span>, husk å ta med egen matpakke!</p>
-<p>Dessuten, <span class ="invitasjon"></span> bla, bla, bla. </p>
+<p> <b><span class ="invitasjon"></span></b>, husk å ta med egen matpakke!</p>
+<p>Dessuten, <b><span class ="invitasjon"></span></b> bla, bla, <b><span class ="invitasjon"></span></b> bla. </p>
 <script type="text/javascript">
-//kommentar
+  //kommentar
 
-var navn=prompt("Hvem skal inviteres?");
-var invitasjonen=document.getElementsByClassName("invitasjon");
-//gjør om til stor forbokstav
-var navn = navn.charAt(0).toUpperCase()+navn.slice(1).toLowerCase();
-invitasjonen.innerHTML=navn;
+  var navn=prompt("Hvem skal inviteres?");
+  var invitasjon=document.querySelectorAll(".invitasjon");
+  //gjør om til stor forbokstav
+  var navn = navn.charAt(0).toUpperCase()+navn.slice(1).toLowerCase();
+console.log(invitasjon);
+  invitasjon.innerHTML=navn;
+var i = 0;var lengde=invitasjon.length;
+while (i<=lengde-1){
+  invitasjon[i].innerHTML=navn;
+  i =i+1;
+}
 </script>
-</body>
+  </body>
 </html>
