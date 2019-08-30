@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+<!--oppretter canvas -->
+<canvas id="canvas" width="300" height="300"></canvas>
+<script>
+  //henter et canvas-element
+var canvas =document.querySelector("#canvas");
+//angir tegnekontekst, og at den skal være 2d
+var ctx =canvas.getContext("2d");
+ctx.fillStyle="orange";//setter farge på fyllet
+ctx.fillRect(40,60,200,150);//tegner et fylt rektangel
+</script>
+  </body>
+</html>
