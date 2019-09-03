@@ -1,7 +1,6 @@
 function setup() {
   // put setup code here
   createCanvas(400, 400);
-
 }
 //tegner ved hjelp av prompt-boks
 var xPos =Number(prompt("Skriv inn x-koordinaten"));
@@ -18,4 +17,5 @@ rect(xPos,yPos,bredde, hoyde);
 line(xPos,yPos, xPos+bredde,yPos+hoyde);
 line(xPos,yPos+hoyde, xPos+bredde,yPos);
 strokeWeight(2);
+
 }
