@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+<h1>Terningkast</h1>
+<script>
+var antallSeksere=0;var n = 10000;
+for (var i =1;i<=n;i++){
+  var terningKast=Math.floor(Math.random()*6+1);
+  if (terningKast==6){
+    antallSeksere++;
+  }
+}
+var sannsynlighet=antallSeksere/n;
+document.write("Antall seksere  er "+antallSeksere+".<br> Sannsynligheten er "+sannsynlighet);
+</script>
+  </body>
+</html>
