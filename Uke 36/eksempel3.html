@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+<h1>God morgen!</h1>
+<img src="bilder/skog.jpg" id="bilde" alt="">
+<script>
+var bilder =["bilder/skog.jpg","bilder/hund.jpg","bilder/geit.png"];
+var bilde=document.getElementById("bilde");
+var tilfeldig=Math.random()*2;
+var tilfeldigAvrundet=Math.round(tilfeldig);
+bilde.src=bilder[tilfeldigAvrundet];
+</script>
+  </body>
+</html>
