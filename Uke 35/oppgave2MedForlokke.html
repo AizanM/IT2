@@ -9,19 +9,17 @@
 <p>Hei, <b><span class ="invitasjon"></span></b>. <b><span class ="invitasjon"></span></b>, du inviteres til å feire
 bursdagen sammen med meg.</p>
 <p> <b><span class ="invitasjon"></span></b>, husk å ta med egen matpakke, <b><span class ="invitasjon"></span></b>!</p>
-<p>Dessuten, <b><span class ="invitasjon"></span></b> bla, bla, <b><span class ="invitasjon"></span></b> bla. </p>
+<p>Dessuten, <b><span class ="invitasjon"></span></b> mer tekst, <b><span class ="invitasjon"></span></b> mer tekst. </p>
 <script type="text/javascript">
-  //kommentar
-
   var navn=prompt("Hvem skal inviteres?");
   var invitasjon=document.querySelectorAll(".invitasjon");
-  //gjør om til stor forbokstav
-  var navn = navn.charAt(0).toUpperCase()+navn.slice(1).toLowerCase();
-
-var lengde=invitasjon.length;
-for (var i=0;i<lengde;i++){
-  invitasjon[i].innerHTML=navn;
-}
+  var lengde=invitasjon.length;
+// her skal lages for-løkke for å legge inn navnet i invitasjonen over
 </script>
   </body>
 </html>
+
+
+for (var i=0;i<lengde;i++){
+  invitasjon[i].innerHTML=navn;
+}
