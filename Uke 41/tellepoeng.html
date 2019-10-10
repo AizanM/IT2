@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+<script>
+var poengsum=0;
+function leggTilPoeng(poeng){
+  poengsum+=poeng;
+}
+function trekkFraPoeng(poeng){
+  poengsum-=poeng;
+}
+leggTilPoeng(5);
+leggTilPoeng(2);
+trekkFraPoeng(3);
+document.write("Antall poeng ="+ poengsum)
+</script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Velkommen</h1>
+<script>
+function lagDiv(tekst,bredde, bakgrunnsfarge, tekstfarge){
+    document.body.style.color=tekstfarge;
+    document.body.style.backgroundColor=bakgrunnsfarge;
+    document.body.style.fontSize=bredde
+
+    document.body.innerHTML+="<div>"+tekst+"</div>"
+
+    var nydiv=document.createElement("div");
+    var nytekst=document.createTextNode("Ny tekst: "+tekst);
+    nydiv.appendChild(nytekst);
+    document.body.appendChild(nydiv);
+    nydiv.style.color="pink"
+    nydiv.style.backgroundColor="gray"
+    nydiv.style.width=bredde
+}
+
+lagDiv("Hei på deg!","155%", "black", "white");
+
+</script>
+  </body>
+</html>
