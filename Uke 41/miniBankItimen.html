@@ -23,8 +23,10 @@ var btn=document.getElementById("btn");
 var btnSlett=document.getElementById("btnSlett");
 var melding=document.getElementById("melding");
 var saldo=0;var uttak=0;
-btnSlett.onclick=function(){inpSaldo.value=inpUttak.value="";}
-function visSaldo(){
+btnSlett.onclick=function(){inpSaldo.value=inpUttak.value="";}//anonym hendelsesstyrt Funksjon
+//tømmer input-feltene
+function visSaldo(){//sjekker om det er dekning på kontoen, beregner ny saldo
+  //sender melding til brukeren
 saldo=Number(inpSaldo.value);
 uttak=Number(inpUttak.value);
 if (saldo<uttak){
