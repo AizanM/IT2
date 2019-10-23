@@ -1,0 +1,26 @@
+body {
+  background-color: #e0e0e0;
+  font-family: "Century Gothic", Arial, sans-serif;
+  font-size: 14 px;
+ color:#323232;
+}
+.innpakning{
+  width: 80;
+  margin: auto;
+  padding: 5px;
+  background-color: #fefefe;
+}
+table {
+  border-collapse: collapse;//fjerner mellomrom mellom rader/koloner
+}
+th {
+  background-color: gray;
+  border: 1px solid #000000; // svart
+  padding: 5px; // avstand mellom bokskant og innhold
+
+}
+td {
+  background-color: lightgray;
+  border: 1px solid #000000;
+  padding: 5 px;
+}
