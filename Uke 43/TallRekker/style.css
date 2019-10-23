@@ -1,0 +1,9 @@
+ul li {
+  display: inline; //gjør listepunktene til inline
+
+}
+ul {
+  list-style-type: none; //fjerner kulepunkter
+  margin: 0; // fjerner alle mellomrom
+  padding: 0; // fjerner alle mellomrom
+}
