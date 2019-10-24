@@ -31,4 +31,5 @@ function sorterFornavn(a,b){
   } else {
     return 0;
   }
+
 }
