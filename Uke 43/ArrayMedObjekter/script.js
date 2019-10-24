@@ -8,7 +8,17 @@ const klasseliste =[
 ];
 
 const elevGrid = document.createElement("div");
-klasseliste.sort(sorterEtternavn)//objektene blir sortert i arrayen etter fornavn
+const btnFornavn=document.querySelector("#btnFornavn")
+const btnEtternavn=document.querySelector("#btnEtternavn");
+VisElevene();
+btnFornavn.onclick= () => {
+  elevGrid.innerHTML ="";
+  klasseliste.sort(sorterFornavn);
+  VisElevene()}//objektene blir sortert i arrayen etter fornavn
+btnEtternavn.onclick= () => {
+elevGrid.innerHTML ="";
+klasseliste.sort(sorterEtternavn); VisElevene()}//objektene blir sortert i arrayen etter etternavn}
+function VisElevene(){
 for(const elev of klasseliste){//går gjennom array og legger innholdet i div-elementer
 elevGrid.innerHTML += `
 <div class="elev">
@@ -17,17 +27,20 @@ elevGrid.innerHTML += `
 <p>${elev.klasse}</p>
 </div>
 `;
-};
+}};
 elevGrid.style.display = "grid";
 elevGrid.style.gridTemplateColumns= "1fr 1fr 1fr 1fr";
 //document.body.innerHTML = "";
 //document.body.appendChild(elevGrid);
 innpakningEl.appendChild(elevGrid);
 function sorterFornavn(a,b){
-
-  a=a.fornavn;
-  b=b.fornavn;
-    return b<a;
+  if (a.fornavn>b.fornavn){
+    return 1;
+  } else if (a.fornavn < b.fornavn){
+    return -1;
+  } else {
+    return 0;
+  }
 }
 
 function sorterEtternavn(a,b){
