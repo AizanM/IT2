@@ -23,17 +23,17 @@ elevGrid.style.gridTemplateColumns= "1fr 1fr 1fr 1fr";
 //document.body.innerHTML = "";
 //document.body.appendChild(elevGrid);
 innpakningEl.appendChild(elevGrid);
-/*function sorterFornavn(a,b){
+function sorterFornavn(a,b){
 
   a=a.fornavn;
   b=b.fornavn;
-    return b>a;
+    return b<a;
 }
-*/
+
 function sorterEtternavn(a,b){
-  if (a.Etternavn>b.Etternavn){
+  if (a.etternavn>b.etternavn){
     return 1;
-  } else if (a.Etternavn < b.Etternavn){
+  } else if (a.etternavn < b.etternavn){
     return -1;
   } else {
     return 0;
