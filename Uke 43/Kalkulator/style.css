@@ -5,23 +5,52 @@ body {
  color:#323232;
 }
 .innpakning{
-  width: 150px;
+  width: 260px;
   margin: auto;
   padding: 5px;
-  background-color: lightgray;
+  background-color: lightgray;border-radius: 2px;
+  border-width: medium;border: solid;
 }
 .divknapp {
-  width: 50%;
 
   padding: 2px; // avstand mellom bokskant og innhold
   margin: 5px;
-  background-color: lightgray;
+  background-color: lightgrey;
 }
 .knapp {
-  background-color: gray;
+  background-color: grey;
   color: white;
+  padding: 15px 20px;
+  text-align: center;
+  font-size: 20px;
+margin: 4px 2px;
+cursor: pointer;border-radius: 12px;
+-webkit-transition-duration: 0.4s; /* Safari */
+transition-duration: 0.4s;
+/*box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 9px 5px 0 rgba(0,0,0,0.1)*/
+}
+
+.knapp:active {
+  background-color: lightgrey;
+  /*box-shadow: 0 5px #666;*/
+  box-shadow: 0 5px 5px 0 rgba(0,0,0,0.24), 0 2px 5px 0 rgba(0,0,0,0.1)
+  /*transform: translateY(4px);*/
+}
+.knapp:hover {
+  background-color: lightgrey;
+  color: white;
+  9);
 }
 .felt{
-  width: 140px;
+  width: 240px;
+  height: 50px;font-size: 20px;
   background-color: white;
+  border: 2px solid grey;
+  box-sizing: border-box;
+  font-display:optional;
+  text-align: right;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+margin: auto;
 }
