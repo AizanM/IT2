@@ -11,6 +11,9 @@ body {
   background-color: lightgray;border-radius: 2px;
   border-width: medium;border: solid;
 }
+span {
+  display: none;
+}
 .divknapp {
 
   padding: 2px; // avstand mellom bokskant og innhold
