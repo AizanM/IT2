@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+<p id="trykket">keyCode: </p>
+<script>
+  var tryketEl=document.querySelector("#trykket");
+  var bodyEl=document.querySelector("body");
+
+  //legger til keydown-hendelse på body-elementet
+  bodyEl.addEventListener("keydown", sjekkKnapp);
+
+  // funksjonen som finner knappen vi trykker på
+//koden vi får er den samme som brukes i ASCII- tegnesettet for små bokstaver
+  function sjekkKnapp(e){
+    tryketEl.innerHTML="keyCode: "+ e.keyCode+". ";
+    if(e.keyCode===87){
+      tryketEl.innerHTML+="Du har trykket på w-knappen!";
+    }
+  }
+
+</script>
+  </body>
+</html>

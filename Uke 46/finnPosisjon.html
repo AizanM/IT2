@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+<p id="xPos">X-posisjon:</p>
+<p id="yPos">Y-posisjon:</p>
+
+<script>
+  //henter de to elementene og body-elementet
+var xPos=document.querySelector("#xPos");
+var yPos=document.querySelector("#yPos");
+var bodyEl=document.querySelector("body");
+
+//legger til en mousemove-hendelse på body-elementet
+bodyEl.mousemove=addEventListener("mousemove", visPosisjon);
+
+function visPosisjon(e){
+  xPos.innerHTML="X-posisjon: "+e.clientX;
+  yPos.innerHTML="Y-posisjon: "+e.clientY;
+}
+</script>
+  </body>
+</html>

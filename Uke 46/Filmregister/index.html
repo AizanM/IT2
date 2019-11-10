@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head><link rel="stylesheet" href="style.css">
+      <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+<div class="innpakning">
+
+<div class="register"><h1>Filmregister</h1>
+<label for="navn" >Tittel</label>
+<input type="text" id = "filmTittel" name="" value="" placeholder="Filmens tittel">
+<label for="aarstall">Årstall</label>
+<input type="number" name="" value="" id="aarstall">
+<label >Beskrivelse</label>
+<textarea placeholder="Skriv en kort beskrivelse av teksten"></textarea>
+<label for="dato">Velg dato</label>
+<input type="date" name="" value="">
+<label >Aldersgrense</label>
+<select class="" name="aldersgrense">
+  <option value="alle"> Tillatt for alle</option>
+  <option value="syv">7 år</option>
+  <option value="elleve">11 år</option>
+  <option value="femten">15 år</option>
+  <option value="atten">18 år</option>
+</select><br>
+<label >Format</label><br>
+<input type="checkbox" name="format" value="kino">Kino<br>
+<input type="checkbox" name="format" value="dvd">DVD<br>
+<input type="checkbox" name="format" value="strtj">Strømmetjeneste<br>
+<input type="checkbox" name="format" value="tv">TV<br><br>
+<label >Fått Oscar?</label><br>
+<input type="radio" name="oscar" value="ja" id="oscarJa">Ja<br>
+<input type="radio" name="oscar" checked value="nei" id="oscarNei">Nei<br>
+<hr>
+<button type="button" name="button" id="btn">Register</button>
+
+</div>
+<div class="visning">
+  <h1>Oversikt</h1>
+  <ul id="oversikt">
+  </ul>
+  <hr>
+  <button type="button" name="button" id="btnSorter">Sorter</button>
+</div>
+
+</div>
+
+
+
+<script src="skript.js"></script>
+
+
+  </body>
+</html>

@@ -3,6 +3,8 @@ const inpPris = document.querySelector("#inpPris")
 const handlekurven = document.querySelector("#handlekurven")
 const txtSum = document.querySelector("#txtSum")
 const txtPris = document.querySelector("#txtPris")
+const btn = document.querySelector("#btn")
+
 const varer=[];//oppretter en tom array for varenavn
 var sum =0;
 class Vare {

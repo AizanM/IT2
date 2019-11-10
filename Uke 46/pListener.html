@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      body {
+        font-family: Arial, New Times;
+        font-size: 14px;
+      }
+      p {
+        background-color: #f05a3f;
+        padding: 10px;
+        width: 100px;
+      }
+      p:hover {/*musepekerens utseende blir til en hånd*/
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+<p id="avsnitt" >Trykk på meg</p>
+<script>
+var avsnittEl=document.querySelector("#avsnitt");//henter ut p-element
+avsnittEl.addEventListener("click", nytekst);
+//avsnittEl.onclick= nytekst;
+
+function nytekst(){
+  avsnittEl.innerHTML="Du trykket på meg"
+}
+</script>
+  </body>
+</html>
