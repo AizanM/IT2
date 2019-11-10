@@ -9,44 +9,47 @@
 
 <div class="register"><h1>Filmregister</h1>
 <label for="navn" >Tittel</label>
-<input type="text" id = "filmTittel" name="" value="" placeholder="Filmens tittel">
+<input type="text" id = "filmTittel" name=""  placeholder="Filmens tittel" required>
 <label for="aarstall">Årstall</label>
-<input type="number" name="" value="" id="aarstall">
+<input type="number"  name="" value="" id="aarstall" required>
 <label >Beskrivelse</label>
-<textarea placeholder="Skriv en kort beskrivelse av teksten"></textarea>
+<textarea placeholder="Skriv en kort beskrivelse av teksten" required></textarea>
 <label for="dato">Velg dato</label>
-<input type="date" name="" value="">
+<input type="date" id="dato" name="" value="" required>
 <label >Aldersgrense</label>
-<select class="" name="aldersgrense">
-  <option value="alle"> Tillatt for alle</option>
-  <option value="syv">7 år</option>
-  <option value="elleve">11 år</option>
-  <option value="femten">15 år</option>
-  <option value="atten">18 år</option>
+<select class="" name="aldersgrense" id="grense" required>
+  <option value="Alle"> Tillatt for alle</option>
+  <option value="7 år">7 år</option>
+  <option value="11 år">11 år</option>
+  <option value="15 år">15 år</option>
+  <option value="18 år">18 år</option>
 </select><br>
 <label >Format</label><br>
-<input type="checkbox" name="format" value="kino">Kino<br>
-<input type="checkbox" name="format" value="dvd">DVD<br>
-<input type="checkbox" name="format" value="strtj">Strømmetjeneste<br>
-<input type="checkbox" name="format" value="tv">TV<br><br>
+<input type="checkbox" name="format" id="kino">Kino<br>
+<input type="checkbox" name="format" id="dvd">DVD<br>
+<input type="checkbox" name="format" id="strtj">Strømmetjeneste<br>
+<input type="checkbox" name="format" id="tv">TV<br><br>
 <label >Fått Oscar?</label><br>
-<input type="radio" name="oscar" value="ja" id="oscarJa">Ja<br>
-<input type="radio" name="oscar" checked value="nei" id="oscarNei">Nei<br>
+<input type="radio" name="oscar" value="ja" checked id="oscarJa">Ja<br>
+<input type="radio" name="oscar"  value="nei" id="oscarNei">Nei<br>
 <hr>
-<button type="button" name="button" id="btn">Register</button>
+<button type="submit" name="button" id="btn">Registrer</button>
 
 </div>
 <div class="visning">
   <h1>Oversikt</h1>
-  <ul id="oversikt">
-  </ul>
+  <table>
+    <thead>
+      <tr><th>Tittel</th><th>Årstall</th><th>Dato</th><th>Format</th><th>Grense</th><th>Oskar</th></tr>
+    </thead>
+    <tbody id="oversikt">
+    </tbody>
+  </table>
   <hr>
   <button type="button" name="button" id="btnSorter">Sorter</button>
 </div>
 
 </div>
-
-
 
 <script src="skript.js"></script>
 
