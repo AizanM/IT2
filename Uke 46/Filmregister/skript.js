@@ -10,9 +10,12 @@ const tv = document.querySelector("#tv");
 const strtj = document.querySelector("#strtj");
 const oversikt = document.querySelector("#oversikt");
 const btnSorter=document.querySelector("#btnSorter");
-const btn=document.querySelector("#btn");
+const reg=document.querySelector("#reg");
 const Filmregister=[];//oppretter en tom array
 
+/*window.onload = function() {
+  document.getElementById("filmTittel").focus();
+};*/
 class Film {
   constructor (filmTittel, aarstall, dato,format, grense, oscar){
     this.filmTittel=filmTittel;
@@ -41,16 +44,17 @@ const visOversikt = () => {// går gjennom arrayen og viser innholdet i en liste
     oversikt.innerHTML+=film.Liste;
   }
 }
-btn.addEventListener("click", Registrer);
-function Registrer() { // når brukeren klikker på knappen opprettes et nytt objekt som legges i arrayen
+reg.onsubmit=function(evt){
+  evt.preventDefault();
+  // når brukeren klikker på knappen opprettes et nytt objekt som legges i arrayen
   var format=""; var oscar ="";
   if (kino.checked){format+= "Kino "
   }
-  if (tv.checked){format+= " TV "
+  if (dvd.checked){format+= " DVD "
   }
   if (strtj.checked){format+= " Strømmetjeneste "
   }
-  if (dvd.checked){format+= " DVD"
+  if (tv.checked){format+= " TV"
   }
   if (inpOscarJa.checked){oscar= "Ja";}
   else {oscar = "Nei"}

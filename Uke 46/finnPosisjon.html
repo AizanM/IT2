@@ -7,13 +7,11 @@
   <body>
 <p id="xPos">X-posisjon:</p>
 <p id="yPos">Y-posisjon:</p>
-
 <script>
   //henter de to elementene og body-elementet
 var xPos=document.querySelector("#xPos");
 var yPos=document.querySelector("#yPos");
 var bodyEl=document.querySelector("body");
-
 //legger til en mousemove-hendelse på body-elementet
 bodyEl.mousemove=addEventListener("mousemove", visPosisjon);
 

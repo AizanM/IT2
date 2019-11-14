@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Huskeliste</title>
+        <style>
+            body{
+                font-family: sans-serif;
+            }
+            #info{
+                position: absolute;
+                top:50px;
+                left:100px;
+                width:600px;
+            }
+            #skjema{
+                position: absolute;
+                top:450px;
+                left:100px;
+                height: auto;
+            }
+        </style>
+    </head>
+
+       <body>
+           <div id="info">
+                <h4>Kap 6.4 Skjemaer s 144 </h4>
+                <img src="form.jpg" width="600"><br><br>
+                Form-elementet og "submit" button brukes vanligvis når man ønsker å sende inndata videre til en annen webside eller til en database. For å være sikker på at det er tastet inn nødvendig data som skal sendes videre valideres gjerne inndata (required). Bruker får beskjed om å taste inn verdier dersom bruker trykker OK knapp uten å skrive inn først.<br><br>
+                Vi skal ikke sende info videre. Derfor må vi bruke <strong>Single Page Application</strong>:<br>
+               <img src="preventDefault.jpg" width="450">
+           </div>
+           <div id="skjema">
+               Legg inn "ting du må huske":<br><br>
+               <form id="frmRegistrerTing">
+                    <input id="inpTing" type="text" placeholder="Ting jeg må huske" required>
+                    <button type="submit">OK</button>
+                </form>
+
+            <ul id="huskeliste"></ul>
+            </div>
+        <script>
+            var frmRegistrerTing = document.getElementById("frmRegistrerTing");
+            var inpTing = document.getElementById("inpTing");
+            var huskeliste = document.getElementById("huskeliste");
+
+            frmRegistrerTing.onsubmit = function(evt){
+                evt.preventDefault(); // Stopper innsending av data
+                huskeliste.innerHTML += "<li>" + inpTing.value + "</li>"; //Legger til et listepunkt
+                inpTing.value = ""; //Tømmer input-elementet
+            }
+        </script>
+    </body>
+</html>

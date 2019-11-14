@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <style media="screen">
+      body{
+        background-color: olive;
+      }
+      #ugle {
+        width: 300px;
+        margin: 150px;
+        transition: 1s;//tiden figuren bruker til å rotere
+      }
+    </style>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+<div class="">
+<input type="color" id="fargevelger" >
+<input type="range" id="rotasjonsvelger" value="0" min="0" max="360">
+
+</div><br><div >
+<span id="grader">0 grader</span>
+</div>
+<img src="ugle.svg" id="ugle" alt="">
+<script>
+  var grader=document.getElementById("grader");
+var ugle=document.getElementById("ugle");
+var fargevelger=document.getElementById("fargevelger");
+var rotasjonsvelger=document.getElementById("rotasjonsvelger");
+fargevelger.onchange=function(){
+  document.body.style.background=fargevelger.value; // setter farge på bodyen
+}
+rotasjonsvelger.onchange=function(){
+  ugle.style.transform="rotate("+rotasjonsvelger.value+"deg)";
+  grader.innerHTML=rotasjonsvelger.value + " grader";
+}
+</script>
+  </body>
+</html>

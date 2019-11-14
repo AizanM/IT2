@@ -8,10 +8,11 @@
 <div class="innpakning">
 
 <div class="register"><h1>Filmregister</h1>
+<form id="reg">
 <label for="navn" >Tittel</label>
-<input type="text" id = "filmTittel" name=""  placeholder="Filmens tittel" required>
+<input type="text" id = "filmTittel"  name="" autofocus  placeholder="Filmens tittel" required>
 <label for="aarstall">Årstall</label>
-<input type="number"  name="" value="" id="aarstall" required>
+<input  type="number" max="9999" min="1900" name="" value="" id="aarstall" required>
 <label >Beskrivelse</label>
 <textarea placeholder="Skriv en kort beskrivelse av teksten" required></textarea>
 <label for="dato">Velg dato</label>
@@ -30,11 +31,11 @@
 <input type="checkbox" name="format" id="strtj">Strømmetjeneste<br>
 <input type="checkbox" name="format" id="tv">TV<br><br>
 <label >Fått Oscar?</label><br>
-<input type="radio" name="oscar" value="ja" checked id="oscarJa">Ja<br>
-<input type="radio" name="oscar"  value="nei" id="oscarNei">Nei<br>
+<input type="radio" name="oscar" value="ja" id="oscarJa">Ja<br>
+<input type="radio" name="oscar"  value="nei" checked id="oscarNei">Nei<br>
 <hr>
 <button type="submit" name="button" id="btn">Registrer</button>
-
+</form>
 </div>
 <div class="visning">
   <h1>Oversikt</h1>

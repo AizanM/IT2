@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Hentet fra it2cha.com</title>
+    </head>
+
+    <body>
+        <div>
+            <button id="btnKatt" data-bilde="katt.jpg" >Vis meg en katt!</button>
+            <button id="btnHund" data-bilde="hund.jpg" >Vis meg en hund!</button>
+        </div>
+       <img id="bilde">
+        <script>
+            var btnKatt = document.getElementById("btnKatt");
+            var btnHund = document.getElementById("btnHund");
+            var bilde = document.getElementById("bilde");
+            function visBilde(evt) {
+                var knapp = evt.target;
+                var bildefil = knapp.getAttribute("data-bilde");
+                bilde.src = bildefil;
+            }
+          //  btnKatt.onclick = visBilde;
+          //  btnHund.onclick = visBilde;
+            btnKatt.onclick = btnHund.onclick = visBilde;
+
+        </script>
+    </body>
+</html>

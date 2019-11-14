@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head><style >
+    #boks{
+      display:  flex;
+      margin: auto;/*plasserer div i sentrum av dokumentet*/
+      width: 600px;
+      height: 300px;
+      flex-direction: row; /*stående stolper, alternativt column*/
+      align-items: flex-end; /*angir hvor stolpene starter*/
+    }
+
+    #boks > div{
+      background-color: red;
+      margin: 5px;
+      flex-grow: 1; /*hvor stor plass stolpene skal ha i bredden*/
+      text-align: center;
+      color: white;
+      font-family: arial, verdana, sans-serif;
+    }
+  </style>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+<div id="boks">
+
+</div>
+  </body>
+  <script>
+var boks=document.getElementById("boks");
+var temperaturer=[16, 15,15, 18, 22, 25,30,33,33, 30,25, 20,17,17,17,16];
+function finnMaks(){
+  var maks=-Infinity;
+  for (var temp of temperaturer){
+    if(temp>maks){
+      maks=temp;
+    }
+  }
+  return maks;
+}
+function tegnStolper(){
+  var maks=finnMaks();
+  for(var temp of temperaturer){
+    var prosent=temp/maks*100;
+    boks.innerHTML+=`<div style="height:${prosent}%">${temp}</div>`;
+  }
+}
+tegnStolper();
+  </script>
+</html>
