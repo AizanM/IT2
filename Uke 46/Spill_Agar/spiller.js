@@ -10,8 +10,8 @@ class Spiller{
     circle(this.x, this.y, this.storrelse);
   }
   flytt(){
-    this.x += (mouseX - this.x)*0.01;
-    this.y += (mouseY - this.y)*0.01;
+    this.x += (mouseX - this.x)*0.1;
+    this.y += (mouseY - this.y)*0.1;
   }
   spis(){
     this.storrelse += 2;
