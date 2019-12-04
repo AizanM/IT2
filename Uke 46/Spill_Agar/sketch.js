@@ -29,7 +29,8 @@ function draw() {
       location.reload();
     }
   }
-  player1.flytt();
-  player1.tegn();
 
+//if(mouseIsPressed){player1.flytt();}
+player1.flytt();
+  player1.tegn();
 }

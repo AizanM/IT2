@@ -16,7 +16,7 @@
             var btnHund = document.getElementById("btnHund");
             var bilde = document.getElementById("bilde");
             function visBilde(evt) {
-                var knapp = evt.target;
+                var knapp = evt.target;//referanse til knappen som ble trykket på
                 var bildefil = knapp.getAttribute("data-bilde");
                 bilde.src = bildefil;
             }
