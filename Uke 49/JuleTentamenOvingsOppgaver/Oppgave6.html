@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+<input type="number" id="verdi" placeholder="Skriv inn varens verdi"name="" value="">
+<button type="button" id="btn" name="button">Beregn</button><br><br>
+<span id="svar"></span>
+<script>
+var verdiEl=document.querySelector("#verdi")
+var btn=document.querySelector("#btn")
+var svar=document.querySelector("#svar")
+btn.onclick=beregn;
+
+function beregn(){
+  verdi=Number(verdiEl.value);
+  var tollgebyr=158
+  if (verdi<350){
+    verdi=verdi;
+  } else {
+    verdi =verdi*1.25+tollgebyr;
+  }
+  svar.innerHTML=" Du skal betale "+verdi.toFixed(2)+" kr inkludert mva og tollgebyr"
+  verdiEl.value="";
+}
+
+</script>
+  </body>
+</html>

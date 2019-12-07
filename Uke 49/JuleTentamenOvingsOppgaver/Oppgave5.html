@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+<input type="number" id="f" name="" value="">
+<button type="button" id="btn" name="button">Omgjør</button><br><br>
+<div id="svar" ></div>
+<img src="bilder/termometer.png" alt="">
+
+<script>
+var fEl=document.querySelector("#f");
+var btn=document.querySelector("#btn");
+var svar=document.querySelector("#svar");
+btn.onclick=beregn;
+  function beregn(){
+  var F =Number(fEl.value);
+  var c=(F-32)*5/9;
+  svar.innerHTML=c.toFixed(1) + "&#8451";
+}
+</script>
+  </body>
+</html>

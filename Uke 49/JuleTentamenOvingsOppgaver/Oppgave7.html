@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head><style media="screen">
+  body{
+    font-family: "Century Gothic", Arial, sans-serif;
+  }
+    p {
+      text-align: left;
+      font-size:18px;
+      margin-left: 10px;
+    }
+    .innpakning{
+      border-style: solid;
+      border-color: black;
+      width: 700px;
+      height: 600px;
+    }
+     #toppen{
+      font-size:25px;
+      margin-left: 10px;
+
+    }
+    .topp {
+      text-align: left;
+      height: 130px;
+      background-color: lightgrey;
+      border-bottom: solid;
+      border-color: black;
+      padding-bottom: 10px;
+      padding-top: 10px;
+
+    }
+    .innhold{
+      height: 390px;
+      margin-left: 10px;
+    }
+    #sok{
+      border-radius: 10px;
+      width: 50px
+    }
+    #nyperson{
+      box-shadow: 0 5px 5px 0 black, 0 2px 5px 0 black;
+
+    }
+.bunn{
+  background-color: lightgrey;
+  border-top: solid;
+  height: 34px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+  </style>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+<div class="innpakning">
+
+
+<div class="topp">
+  <p>Tilfeldig person i berg- og dalbanen</p>
+<span id="toppen"> &#8678 &#8680 &#10008 &#127968</span> <input type="text" id="alder" disabled name="" value="">
+<button type="button" id ="sok" name="button">&#128269</button></div>
+
+<br>
+<div class="innhold">
+<button type="button" id ="nyperson" name="button">Ny telfeldig person</button><br><br>
+<span id="svar"></span><br>
+<br>
+<img src="finner ikke" id ="bilde" width ="300px" alt="Bilde">
+</div><div class="bunn">
+
+</div></div>
+<script>
+  var alderEl=document.querySelector("#alder")
+  var sok=document.querySelector("#sok")
+  var svar=document.querySelector("#svar")
+  var bildeEl=document.querySelector("#bilde")
+  var nyPersonEl=document.querySelector("#nyperson")
+  var alder = 0; nyalder=0;
+  sok.onclick=beregn;
+  nyPersonEl.onclick=nyTall;
+
+  function nyTall(){
+     alder=Math.floor(Math.random()*70+1);
+     nyalder=alder;
+    alderEl.value=alder + " år"
+  }
+  function beregn (){
+    if (alder<15 ){
+      bildeEl.src="bilder/ung.jpg"
+      svar.innerHTML="Ikke for smårollinger, minst 15 år!"
+    } else
+    if (alder>60 ){
+      bildeEl.src="bilder/gammel.jpg"
+      svar.innerHTML="Ikke for gamlinger, maks 60 år!"
+    } else    {
+          bildeEl.src="bilder/passe.jpg"
+          svar.innerHTML=alder+" år! Gratulerer, du er akkurat passe gammel!"
+        }
+        alderEl.value="";
+  }
+</script>
+  </body>
+</html>

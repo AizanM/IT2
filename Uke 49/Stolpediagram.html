@@ -9,8 +9,15 @@
       flex-direction: row; /*stående stolper, alternativt column*/
       align-items: flex-end; /*angir hvor stolpene starter*/
     }
-
-    #boks > div{
+    .gul {
+      background-color: yellow;
+      margin: 5px;
+      flex-grow: 1; /*hvor stor plass stolpene skal ha i bredden*/
+      text-align: center;
+      color: white;
+      font-family: arial, verdana, sans-serif;
+    }
+    .rod {
       background-color: red;
       margin: 5px;
       flex-grow: 1; /*hvor stor plass stolpene skal ha i bredden*/
@@ -38,13 +45,28 @@ function finnMaks(){
   }
   return maks;
 }
+tegnStolper();
+var stolper=document.querySelectorAll("p")
+for (var i =0; i<stolper.length; i++){//legger til en lytter på hvert av div elementene
+  //stolper[i].addEventListener("click", byttFarge);
+  stolper[i].onclick=byttFarge;
+}
+
+function byttFarge(e){
+  if(e.target.className==="rod"){
+    e.target.className="gul";
+  }else {
+    e.target.className="rod";
+  }
+}
+
 function tegnStolper(){
   var maks=finnMaks();
   for(var temp of temperaturer){
     var prosent=temp/maks*100;
-    boks.innerHTML+=`<div style="height:${prosent}%">${temp}</div>`;
+    boks.innerHTML+=`<p class="rod" style="height:${prosent}%">${temp}</p>`;
   }
 }
-tegnStolper();
+
   </script>
 </html>

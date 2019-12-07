@@ -1,0 +1,23 @@
+.menu {
+  list-style-type: none; //fjerner kulepunkter
+  margin: 0;
+  padding: 0;
+}
+.menu li{
+display: inline;
+
+}
+
+button {
+
+  color: white;
+  padding: 3px 10px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0 1px 5px rgb(0,0,0,0.7); //skygge bak knappene
+  outline: none; //fjerner ekstra kantlinje
+}
+button:active{
+  transform: translate (1px, 1px); // 1px til høyre og 1px ned
+}
