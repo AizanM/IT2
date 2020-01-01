@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head><style media="screen">
+    #boks {
+      width: 600px;
+      height: 300px;
+      display: flex;
+      margin: auto;
+      flex-direction: row;
+      align-items: flex-end;
+    }
+    .rod{
+      background-color: red;
+      margin: 5px;
+      flex-grow: 1;
+      text-align: center;
+      color: white;
+      font-family: arial, verdana, sans-serif;
+    }
+    .gul{
+      background-color: yellow;
+      margin: 5px;
+      flex-grow: 1;
+      text-align: center;
+      color: white;
+      font-family: arial, verdana, sans-serif;
+    }
+  </style>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+<div id ="boks" class="">
+</div>
+<script>
+var boks=document.getElementById("boks")
+var temperaturer=[12,14,11,10,15,16,18,20,16,13];
+function finnMaks(){
+  var maks=-Infinity;
+   for( var temp of temperaturer){
+     if (temp >maks){
+       maks=temp;
+     }
+   }
+   return maks;
+}
+tegnStolper();
+var stolper=document.querySelectorAll("p");
+for(var i=0; i<stolper.length;i++){
+  stolper[i].onclick=byttFarge;
+}
+
+function byttFarge(e){
+ if(e.target.className==="rod"){
+   e.target.className="gul";
+ } else {
+   e.target.className="rod";
+ }
+}
+
+
+
+
+
+function tegnStolper(){
+  var maks=finnMaks();
+  for( var temp of temperaturer){
+    var prosent =temp/maks*100;
+    boks.innerHTML+=`<p class="rod" style=" height: ${prosent}%"> ${temp}</p>`;
+  }
+}
+</script>
+  </body>
+</html>

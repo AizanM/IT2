@@ -12,8 +12,6 @@ var bildegalleriEl=document.querySelector("#bildegalleri");
 
 spEl.onclick=Vis;
 mdgEl.onclick=Vis;
-
-
 function Vis(evt) {
    info.innerHTML="";bildegalleriEl.innerHTML=""
    var trykket=evt.target;
