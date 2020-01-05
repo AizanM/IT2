@@ -36,7 +36,7 @@
 </article>
 <script>
 var divBandet = document.getElementById("bandet");
-var infoEl = document.getElementById("info");
+var artikkel = document.getElementById("info");
 var divLyd=document.getElementById("divLyd")
 const band=[
   {navn: 'Trommer', idInstrument: 0, bildeBlek: 'Bilder/trommer_blek.png', bildeSvart: 'Bilder/trommer_sort.png', lyd:'Lyder/trommer.mp3', tekst: 'Trommen holder takten!' },
@@ -59,7 +59,6 @@ for (const instrument of band){
 // Finne alle audio-elementer og img e-elementer
 var lyder = document.querySelectorAll("audio");
 var bilder = document.querySelectorAll("img");
-var artikkel=document.getElementById("info");
 let i;
 //console.log(lyder);console.log(bilder);console.log(band)
 for(var bilde of bilder){
@@ -76,15 +75,6 @@ for(var bilde of bilder){
 for(var lyd of lyder){
   lyd.volume=0;
 }
-/*var artikkel=document.createElement("article");
-artikkel.className="info"; //gir css-klassen info
-document.body.appendChild(artikkel);
-  artikkel.innerHTML="";
-*/
-function Vis(i){
-  artikkel.innerHTML = `<h1>${band[i].navn}</h1>
-                    <p>${band[i].tekst}</p>`;
-}
 
 function SpillLyd(evt){
 var i=Number(evt.target.id);
@@ -99,7 +89,7 @@ if (lyder[i].volume === 1) {
 }
 }
 
-    </script>
+</script>
 
 </body>
 </html>
