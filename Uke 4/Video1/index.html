@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8"><script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title></title>
+  <style media="screen">
+    i{
+      font-size: 20px;
+    }
+    #mediaContainer{
+      position: relative;
+      width: 640px;
+      height: 450px;
+    }
+    #glider {
+      -webkit-appearance: none;  /* Override default CSS styles */
+      appearance: none;
+      width: 100%; /* Full-width */
+      height: 10px; /* Specified height */
+      background: #d3d3d3; /* Grey background */
+      outline: none; /* Remove outline */
+      opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+      -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+      transition: opacity .2s;
+    }
+    #glider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 25px; /* Set a specific slider handle width */
+  height: 15px; /* Slider handle height */
+  background: black; /*  background */
+  cursor: pointer; /* Cursor on hover */
+}
+#volum {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 20%; /* width */
+  height: 5px; /* Specified height */
+  background: #d3d3d3; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+}
+#volum::-webkit-slider-thumb {
+-webkit-appearance: none; /* Override default look */
+appearance: none;
+width: 20px; /* Set a specific slider handle width */
+height: 10px; /* Slider handle height */
+background: black; /*  background */
+cursor: pointer; /* Cursor on hover */
+}
+    #divInfo{
+      position: absolute;
+      width: 70%;
+      height: 50%;
+      margin-left: 15%;
+      margin-top: 30%;
+      text-align: center;
+      font-size: 20px;
+      display: none;
+    }
+    #minVideo{position: absolute;}
+
+    #beskjed{
+      color: white;
+    }
+    #volum{
+      display:none;
+    }
+
+  </style>
+</head>
+  <body>
+    <div id="mediaContainer"><div id="minVideo">
+      <video src="dikt.mp4" id="minFilm"   width="640px" height="400px" type="video/mp4" >
+      <track kind="subtitles" src="teksting.vtt" srclang="no" label="Norsk" default crossorigin="true"  >
+      </video>
+      <input type="range" id="glider" name="" min="0" max="" step="1" value="0">
+      <button type="button" id="btnStart" name="button"><i class='fas'>&#xf049;</i></button>
+      <button type="button" id="btnPlay" name="button"><i class='fas'>&#xf04b;</i></button>
+      <button type="button" id="btnPause" name="button"><i class='fas'>&#xf04d;</i></button>
+      <button type="button" id="btnFram" name="button"><i class='fas'>&#xf105;</i></button>
+      <button type="button" id="btnSlutt" name="button"><i class='fas'>&#xf050;</i></button>
+      <button type="button" id="btnHalvFart" name="button"><i class='fas'>&#xf068;</i></button>
+      <button type="button" id="btnDobbelFart" name="button"><i class='fas'>&#xf067;</i></button>
+      <button id="btnVolum" type="button" name="button"><i id= "volumIkon" class='fas'>
+        	&#xf028;</i></button>
+      <input type="range" id="volum" name="" min="0" max="100" step="1" value="50">
+      <span id="tid"></span>
+      <button onclick="openFullscreen();"><i class="far">&#xf2d0;</i></button>
+    </div>
+<div id="divInfo">
+<span id="beskjed">Vil du avslutte videoen?</span><br><br>
+<button id="ja" type="button" name="button">Ja takk!</button>
+<button id="nei" type="button" name="button">Nei takk, fortsett videoen</button>
+</div>
+</div>
+<script type="text/javascript" >
+//crossorigin="true"
+//crossorigin="anonymous"
+const divInfo=document.querySelector("#divInfo");
+const ja=document.querySelector("#ja");
+const nei=document.querySelector("#nei");
+const minFilm=document.querySelector("#minFilm");
+const btnPlay=document.querySelector("#btnPlay");
+const btnPause=document.querySelector("#btnPause");
+const btnMindreFart=document.querySelector("#btnHalvFart");
+const btnMerFart=document.querySelector("#btnDobbelFart");
+const btnStart=document.querySelector("#btnStart");
+const btnFram=document.querySelector("#btnFram");
+const btnSlutt=document.querySelector("#btnSlutt");
+const volum=document.querySelector("#volum");
+const volumIkon=document.querySelector("#volumIkon");
+const tid=document.querySelector("#tid");
+const btnVolum=document.querySelector("#btnVolum")
+const mediaContainer=document.querySelector("#mediaContainer");
+const glider=document.querySelector("#glider")
+var lengde=0; var lengdeIgjen=0;
+
+volum.onchange=()=>{
+  minFilm.volume=volum.value/100;
+  if (volum.value==0){
+    volumIkon.innerHTML="&#xf6a9;"
+  }else if(volum.value>0 & volum.value<50){
+    volumIkon.innerHTML="&#xf027;"
+  }
+  else {
+    volumIkon.innerHTML="&#xf028;"
+  }
+}
+glider.oninput=()=>{
+minFilm.currentTime=glider.value;
+}
+
+btnPlay.onclick=()=>{
+minFilm.volume=volum.value/100;
+glider.max=minFilm.duration;
+minFilm.play();console.log(minFilm.playbackRate);
+minFilm.currentTime=glider.value;
+function beregn(){
+glider.value=minFilm.currentTime;
+lengdeIgjen=minFilm.currentTime;//avspillingstid
+lengde=minFilm.duration;//lengde av videoen
+lengdeIgjen=toTimeString(lengdeIgjen);
+lengde=toTimeString(lengde);
+tid.innerHTML=lengdeIgjen+ "/"+ lengde;
+requestAnimationFrame(beregn);
+}
+requestAnimationFrame(beregn);
+}
+
+function toTimeString(seconds) {//viser tid i riktig format: h:m:s
+return (new Date(seconds * 1000)).toUTCString().match(/(\d\d:\d\d:\d\d)/)[0];
+}
+btnStart.onclick=()=>{
+  minFilm.currentTime=0;
+}
+btnFram.onclick=()=>{
+    minFilm.currentTime+=5;
+}
+btnSlutt.onclick=()=>{
+    minFilm.currentTime=minFilm.duration-2;
+}
+btnPause.onclick=()=>{
+  minFilm.pause();
+}
+btnMindreFart.onclick=()=>{
+  minFilm.playbackRate=minFilm.playbackRate*1/1.1;
+  console.log(minFilm.playbackRate)
+}
+btnMerFart.onclick=()=>{
+  minFilm.playbackRate=minFilm.playbackRate*1.1;
+  console.log(minFilm.playbackRate)
+}
+btnVolum.onmouseenter=()=>{
+  volum.style.display="inline";
+}
+mediaContainer.onmouseleave=()=>{volum.style.display="none";}
+
+minFilm.ontimeupdate=()=>{
+  if(minFilm.currentTime>minFilm.duration/2 && minFilm.currentTime<minFilm.duration/2+1)
+  {
+    divInfo.style.display="block";
+    minFilm.pause();
+    minFilm.currentTime=minFilm.duration/2+1;
+  }
+}
+ja.onclick=()=>{
+  divInfo.style.display="none";
+  minFilm.currentTime=minFilm.duration-2;}
+  nei.onclick=()=>{
+    divInfo.style.display="none";
+  minFilm.play();}
+
+function openFullscreen() {
+  if (minFilm.requestFullscreen) {
+    minFilm.requestFullscreen();
+  } else if (minFilm.mozRequestFullScreen) { /* Firefox */
+    minFilm.mozRequestFullScreen();
+  } else if (minFilm.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+    minFilm.webkitRequestFullscreen();
+  } else if (minFilm.msRequestFullscreen) { /* IE/Edge */
+    minFilm.msRequestFullscreen();
+  }
+}
+
+
+</script>
+  </body>
+</html>

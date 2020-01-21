@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="viewport" charset="utf-8">
+  
+    <title></title>
+  </head>
+  <body>
+<img src="" id="regnbue" alt="">
+<script type="text/javascript">
+
+fetch('rainbow.jpg')
+.then(response =>{
+
+  return response.blob();
+})
+.then(blob=>{
+
+  document.getElementById("regnbue").src=URL.createObjectURL(blob);
+})
+.catch(error =>{
+  console.error(error);
+})
+</script>
+  </body>
+</html>
