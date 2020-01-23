@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="no">
+    <head>
+      <meta charset="UTF-8">
+      <title>Stjerner blinker s 222</title>
+      <style>
+          body{
+            height: 100%;
+            background-color: black;
+          }
+          .stjerne{
+              position: absolute;
+              background-color: yellow;
+              border-radius: 50%; /*lager rundt divelement*/
+              transition: 0.5s; /*Animason*/
+          }
+        </style>
+    </head>
+    <body>
+        <script>
+           for (var i=0;i<2000;i++){
+               var stjerne = document.createElement("div"); //NB! Oppretter et div element
+               stjerne.className = "stjerne";
+               stjerne.style.left = Math.random()*innerWidth + "px"; //tilfeldig leftposisjon
+               stjerne.style.top = Math.random()*innerHeight + "px"; //tilfeldig topposisjon
+               document.body.appendChild(stjerne); //legger til et divelementet i body
+           }
+            var stjerner = document.getElementsByClassName("stjerne");
+            //stjerner = Array.from(stjerner); //gjør om nodelist til array
+
+            function scramble(){
+                for (var stjerne of stjerner){
+                    stjerne.style.width = Math.random()*3 + "px"; //tilfeldig vidde mellom 0 og 3
+                    stjerne.style.height = stjerne.style.width; //samme som høyde (blir rund)
+
+                }
+            }
+            scramble(); //skjer med en gang siden åpnes
+            setInterval(scramble,10); // og så med intervall på 1,5 sekund
+        </script>
+    </body>
+</html>

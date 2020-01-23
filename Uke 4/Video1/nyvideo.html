@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+<video src="dikt.mp4" id="minFilm" width="640px" height="400px" controls autoplay poster="pingvin.jpg">
+
+</video>
+<button type="button" id ="btnPlay" name="button">Play</button>
+<script type="text/javascript">
+const minFilm=document.querySelector("#minFilm");
+const btnPlay=document.querySelector("#btnPlay");
+btnPlay.onclick=SpillVideo;
+function SpillVideo(){
+  minFilm.play();
+}
+</script>
+  </body>
+</html>

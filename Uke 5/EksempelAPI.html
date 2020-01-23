@@ -2,24 +2,24 @@
 <html lang="en" dir="ltr">
   <head>
     <meta name="viewport" charset="utf-8">
-  
+
     <title></title>
   </head>
   <body>
-<img src="" id="regnbue" alt="">
+<img src="" id="regnskog" alt="" width="400px" height="300">
 <script type="text/javascript">
 
-fetch('rainbow.jpg')
+fetch('regnskog.jpg')
 .then(response =>{
 
   return response.blob();
 })
 .then(blob=>{
 
-  document.getElementById("regnbue").src=URL.createObjectURL(blob);
+  document.getElementById("regnskog").src=URL.createObjectURL(blob);
 })
 .catch(error =>{
-  console.error(error);
+  console.error("får ikke til! :( "+error);
 })
 </script>
   </body>
