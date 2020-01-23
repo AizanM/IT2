@@ -5,17 +5,16 @@
     <title></title>
   </head>
   <body>
-<video src="dikt.mp4" id="minFilm" width="640px" height="400px" controls autoplay poster="pingvin.jpg">
+<video src="dikt.mp4" id="minFilm" width="640px" height="400px"  autoplay poster="pingvin.jpg">
 
 </video>
-<button type="button" id ="btnPlay" name="button">Play</button>
+<button type="button" id ="btnplay" name="button">Play</button>
 <script type="text/javascript">
-const minFilm=document.querySelector("#minFilm");
-const btnPlay=document.querySelector("#btnPlay");
-btnPlay.onclick=SpillVideo;
-function SpillVideo(){
-  minFilm.play();
-}
+  const minfilm=document.querySelector("#minFilm");
+  const btnplay=document.querySelector("#btnplay");
+  btnplay.onclick=spillvideo;
+  function spillvideo(){ minfilm.play();
+  }
 </script>
   </body>
 </html>
