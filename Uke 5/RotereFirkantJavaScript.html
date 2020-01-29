@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <style media="screen">
+      div{
+        width: 200px;
+        height:200px;
+        background-color: red;
+        margin-top:100px;
+      }
+    </style>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+<div class="">
+
+</div>
+<script type="text/javascript">
+var animasjonsID;
+  var divEl=document.querySelector("div");
+  var rotasjon=0;var xpos=0;
+  var fart=2;
+  //funksjonen som gjentas
+  function animer(){
+    //Øker rotasjonen
+    rotasjon+=fart;
+    xpos+=fart;
+    //roterer forkanten til sin nye posisjon
+    divEl.style.transform="rotate("+rotasjon+"deg)";
+    divEl.style.marginLeft=xpos+"px";
+    //gjentar prosessen
+    console.log(divEl.style.marginLeft);
+    if (divEl.style.marginLeft==600+"px"){
+      cancelAnimationFrame(animasjonsID);
+    }else{
+    animasjonsID=requestAnimationFrame(animer);
+  }
+}
+animasjonsID = requestAnimationFrame(animer);
+
+</script>
+  </body>
+</html>
