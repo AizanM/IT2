@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="no">
+    <head>
+      <meta charset="UTF-8">
+      <title>Animasjon s 272</title>
+
+    </head>
+    <body>
+        <img id="snowball" src="Media/snowball.png" width="100">
+        <script>
+        var snowball = document.getElementById("snowball");
+        snowball.animate([
+            {transform: "rotate(0deg)", marginLeft: "10px"},//Før animasjonen
+            {transform: "rotate(1440deg)", marginLeft: "500px"}//Etter animasjonen
+            ],{
+            duration:3000,//varer i 30000millisekunder
+            direction:"alternate",//Går annenhver gang fram og tilbake
+            iterations:Infinity,//Uendelig
+            easing:"Ease-in-out"//Tar det rolig på starten og slutten
+        });
+            </script>
+
+
+
+    </body>
+</html>

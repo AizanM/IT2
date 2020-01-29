@@ -13,7 +13,7 @@
               position: absolute;
               background-color: yellow;
               border-radius: 50%; /*lager rundt divelement*/
-              transition: 0.5s; /*Animason*/
+              transition: 2s; /*Animason*/
           }
         </style>
     </head>
@@ -29,15 +29,15 @@
             var stjerner = document.getElementsByClassName("stjerne");
             //stjerner = Array.from(stjerner); //gjør om nodelist til array
 
-            function scramble(){
+            function blinke(){
                 for (var stjerne of stjerner){
                     stjerne.style.width = Math.random()*3 + "px"; //tilfeldig vidde mellom 0 og 3
                     stjerne.style.height = stjerne.style.width; //samme som høyde (blir rund)
 
                 }
             }
-            scramble(); //skjer med en gang siden åpnes
-            setInterval(scramble,10); // og så med intervall på 1,5 sekund
+            blinke(); //skjer med en gang siden åpnes
+            setInterval(blinke,1500); // og så med intervall på 1.5 sekund
         </script>
     </body>
 </html>

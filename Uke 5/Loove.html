@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="no">
+    <head>
+      <meta charset="UTF-8">
+      <title>LØve og tekst s 256</title>
+      <style>
+          .container{
+              position: relative;
+              width:400px;
+              height:280px;
+              background-color: cadetblue;
+              border: 14px solid white; /*pynteramme*/
+              box-shadow: 0 0 1px DarkGray; /*Skygge rundt rammen*/
+              overflow:hidden; /*Skjuler innholdet som kommer på utsiden*/
+          }
+          /*Bildet av løven er 100% synlig (100% tetthet)*/
+          .container>img{
+              position: absolute;
+              opacity: 1;
+              transition: 1s; /*En overgang varer i 1s */
+          }
+          /*Teksten om løven er 100% gjennomsiktig*/
+          .container>article{
+              position: absolute;
+              width: 80%; /*Bredden er satt til 80% siden padding til sammen er 20%*/
+              height: 80%;
+              padding: 10%;
+              background-color: #003333;
+              color: white;
+              text-align: center;
+              opacity: 0;
+              transition: 2s;
+          }
+          .container:hover>img{/*Animasjonen starter når markøren kommer over div-elementet*/
+              opacity: 0;
+          }
+          .container:hover>article{/*Animasjonen starter når markøren kommer over div-elementet*/
+              opacity: 1;
+          }
+        </style>
+    </head>
+    <body>
+
+        <div class="container">
+        <img src="Media/lion.jpg" width="400">
+        <article class="infoTekst">
+            <h1>Løven</h1>
+            <hr>
+            <p>Løven er et sosialt kattedyr som tilhører slekten brølekatter(Panthera)</p>
+            <a href="#">Les mer</a>
+        </article>
+        </div>
+
+
+
+    </body>
+</html>

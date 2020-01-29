@@ -1,0 +1,86 @@
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Eksamen V2010 Flystevne Oppgave 1</title>
+       <style>
+           body{
+               font-family: sans-serif;
+               color: white;
+           }
+           @keyframes flyttFly{
+              0%{
+                  left:-200px;
+                  top: 200px;
+                  width: 150px;
+                  height: 50px;
+               }
+              100%{
+                  left:1200px;
+                  top: -100px;
+                  width: 450px;
+                  height: 150px;
+               }
+          }
+
+          #fly{
+              position: absolute;
+              left: -200px;
+              top:200px;
+              animation: flyttFly 6s infinite;
+              animation-timing-function: linear;
+          }
+           #ramme{
+              width: 900px;
+              height: 200px;
+              left: 30px;
+              top: 50px;
+              background-color: lightblue;
+              position: relative;
+              overflow:hidden;
+              border: 1px solid darkblue;
+          }
+           #liteFly{
+               position: absolute;
+               top: 220px;
+               left: 40px;
+               font-size: 11px;
+               cursor: pointer;
+           }
+
+        </style>
+    </head>
+    <body>
+        <div id="ramme">
+           <h1> AIR2010</h1>
+            <div> <img id="fly" src="Media/fly.png"></div>
+
+        </div>
+        <div id="liteFly">
+                <img src="Media/fly.jpg" height="30"> (klikk for lyd av/på)
+        </div>
+        <audio id="flyLyd" src="Media/Flylyd.mp3" loop></audio>
+
+        <script>
+            var flyLyd = document.getElementById("flyLyd");
+            var liteFly = document.getElementById("liteFly");
+
+            lydPaa = true;
+            flyLyd.play();
+
+            liteFly.onclick = function(){
+                if  (lydPaa){
+                    flyLyd.pause();
+                    lydPaa = false;
+                }
+                else{
+                    flyLyd.play();
+                    lydPaa = true;
+                }
+            }
+
+        </script>
+    </body>
+</html>

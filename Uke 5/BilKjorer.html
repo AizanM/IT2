@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="no">
+    <head>
+      <meta charset="UTF-8">
+      <title>Bil som kjører s 268</title>
+      <style>
+          /*Flytter bilen fra et stykke til venstre for boksen, først til midten.Etter 30% er bilen 60 piksler fra venstre kant av boksen*/
+          @keyframes flyttBil{
+              0%{left:-600px;}
+              30%{left:60px;}
+              80%{left:60px;}
+              100%{left:800px;}
+          }
+          @keyframes snurrHjul{
+              0%{transform:rotate(0deg);}
+              30%{transform:rotate(720deg);}
+              80%{transform:rotate(720deg);}
+              100%{transform:rotate(1440deg);}
+          }
+          #container{
+              width: 747px;
+              height: 410px;
+              background-image: url(Media/bgr.png);
+              position: relative;
+              overflow:hidden;
+          }
+          #bil{
+              background-image: url(Media/bilen.png);
+              width: 531px;
+              height: 172px;
+              position: absolute;
+              left: -600px;
+              top:180px;
+              animation: flyttBil 5s infinite;
+          }
+          #bakhjul{
+              position: absolute;
+              background-image: url(Media/bakhjul.png);
+              width: 58px;
+              height: 58px;;
+              left: 77px;
+              top:100px;
+              animation: snurrHjul 5s infinite;
+          }
+          #forhjul{
+              position: absolute;
+              width: 58px;
+              height: 58px;;
+              background-image: url(Media/bakhjul.png);
+
+              left: 412px;
+              top:100px;
+              animation: snurrHjul 5s infinite;
+          }
+        </style>
+    </head>
+    <body>
+
+        <div id="container">
+            <div id="bil">
+                <div id="bakhjul"></div>
+                <div id="forhjul"></div>
+            </div>
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html lang="no">
+    <head>
+      <meta charset="UTF-8">
+      <title>CSS Transisions</title>
+      <style>
+          p{
+              width: 300px;
+              height: 30px;
+              background-color: limegreen;
+              transform-origin: right bottom;
+              transform: rotate(0deg);/*setter vi feks 45deg her vil den rotere automatisk når siden åpnes */
+          }
+          p:active{/*animasjonen går når vi klikker og holder musepekeren nede*/
+            transform-origin: right bottom;
+              transform: rotate(-30deg);
+            }
+        </style>
+    </head>
+    <body>
+
+        <p> Klikk på meg!</p>
+
+    </body>
+</html>

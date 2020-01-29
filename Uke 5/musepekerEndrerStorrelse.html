@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="no">
+    <head>
+      <meta charset="UTF-8">
+      <title>CSS Transision</title>
+      <style>
+          .firkant{
+              height: 50px;
+              width: 50px;
+              background-color: limegreen;
+              //transition: all 2s;
+              transition: width 1s 0s, height 1s 1s;
+          }
+          .firkant:hover{
+              width: 400px;
+              height: 200px;
+          }
+        </style>
+    </head>
+    <body>
+
+        <div class="firkant"></div>
+
+
+    </body>
+</html>

@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="no">
+    <head>
+      <meta charset="UTF-8">
+      <title>Animasjon s 273</title>
+      <style>
+          .knapper{
+              text-align: center;
+              margin-top: 100px;
+          }
+          button{
+              border-radius: 4px;
+              border: 1px solid;
+              background-color: aquamarine;
+              width: 70px;
+          }
+          .firkant{
+              width: 20px;
+              height: 20px;
+              background-color: darkgoldenrod;
+              border-radius: 4px;
+              position: absolute;
+          }
+        </style>
+    </head>
+    <body>
+        <div class="knapper">
+            <button id="btnStart">Start</button>
+            <button id="btnPause">Pause</button>
+            <button id="btnRevers">Snu</button>
+        </div>
+        <div class="firkant" id="firkant"></div>
+
+        <script>
+            var btnStart = document.getElementById("btnStart");
+            var btnPause = document.getElementById("btnPause");
+            var btnRevers = document.getElementById("btnRevers");
+            var firkant = document.getElementById("firkant");
+
+            var minAnimasjon = firkant.animate([//Animation player
+                {left: "10px", top: "10px"},//Før animasjonen
+                {left: (innerWidth - 30) + "px", top: "10px"},//trinn en: flytt til høyre del av skjermen
+                {left: (innerWidth - 30) + "px", top: (innerHeight - 30) + "px"}, //trinn to: flytt til nedre til høyre i skjermen
+                {left: "10px", top: (innerHeight - 30) + "px"}, //trinn tre: flytt til nedre venstre del av skjermen
+                {left: "10px", top: "10px"}//trinn fire: tilbake til øvre venstre del av skjermen
+                ],{
+                duration: 4000, //tiden det skal ta, jo større tall jo saktere går animasjonen
+                iterations: Infinity //uendelig animasjon
+            });
+
+            btnStart.onclick = function(){
+                minAnimasjon.play(); //starter animasjonen
+            }
+
+             btnPause.onclick = function(){
+                minAnimasjon.pause(); //pauser animasjonen
+            }
+
+             btnRevers.onclick = function(){
+                minAnimasjon.reverse(); //reverserer animasjonen
+            }
+
+             // se mer s 275
+        </script>
+
+
+
+    </body>
+</html>
