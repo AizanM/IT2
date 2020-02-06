@@ -74,23 +74,25 @@
                     <div class="tekst"><h2>KJØREEGENSKAPER</h2>Dynamisk kurvekontroll reagerer på veioverflaten 100 ganger pr. sekund (det er 33 ganger raskere enn øyet blunker). Ved å bruke denne informasjonen balanseres kontinuerlig mengde effekt og bremsing som leveres til hvert av de to forhjulene. Dette maksimerer veigrepet og skjerper kjøreegenskapene, og hjelper deg på den måten gjennom svingene og over ujevnheter i veien. Dynamisk kurvekontroll er en spissteknologi som er standard på Kuga.</div>
                 </div>
             </div>
-             <div id="knapp"> <button id="btnLyd">Lyd av/på</button></div>
+             <div id="knapp"> <button id="btnLyd">Lyd på</button></div>
         </div>
 
-        <audio id="lyd" src="Media/musikk_eksamen_H2014.mp3" loop autoplay></audio>
+        <audio id="lyd" src="Media/musikk_eksamen_H2014.mp3" loop ></audio>
          <script>
 
             var btnLyd = document.getElementById("btnLyd");
 
-            musikk = true;
+            musikk = false;
             btnLyd.onclick = function(){
-                if(musikk){
-                    lyd.volume = 0;//lyd av
-                    musikk = false;
-                }
-                else{
-                    lyd.volume = 1;//lyd på
+                if(musikk==false){  lyd.play();
+                    //lyd.volume = 1;//lyd på
+                    btnLyd.innerHTML="Lyd av";
                     musikk = true;
+                }
+                else{lyd.pause();
+                    //lyd.volume = 0;//lyd på
+                    btnLyd.innerHTML="Lyd på";
+                    musikk = false;
                 }
             }
         </script>

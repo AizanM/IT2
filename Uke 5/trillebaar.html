@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="no">
+    <head>
+      <meta charset="UTF-8">
+      <title>Trillebaar som kjører</title>
+      <style>
+          @keyframes flyttrillebaar{
+              0%{left:-600px;}
+              30%{left:60px;}
+              80%{left:60px;}
+              100%{left:800px;}
+          }
+          @keyframes snurrHjul{
+              0%{transform:rotate(0deg);}
+              30%{transform:rotate(720deg);}
+              80%{transform:rotate(720deg);}
+              100%{transform:rotate(1440deg);}
+          }
+          #container{
+              width: 1000px;
+              height: 600px;
+              background-color: white;
+              position: relative;
+              overflow:hidden;
+          }
+          #trillebaar{
+              background-image: url(Media/trillebår.png);
+              width: 848px;
+              height: 565px;
+              position: absolute;
+              left: -600px;
+              top:50px;
+              animation: flyttrillebaar 5s infinite;
+          }
+          #hjul{
+              position: absolute;
+              background-image: url(Media/hjul.png);
+              width: 175px;
+              height: 187px;
+              left: 490px;
+              top:348px;
+              animation: snurrHjul 5s infinite;
+          }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <div id="trillebaar">
+                <div id="hjul"></div>
+            </div>
+        </div>
+    </body>
+</html>
