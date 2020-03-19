@@ -10,15 +10,19 @@
         <img id="snowball" src="Media/snowball.png" width="100">
         <script>
         var snowball = document.getElementById("snowball");
-        snowball.animate([
+var animasjonen=snowball.animate([
             {transform: "rotate(0deg)", marginLeft: "10px"},//Før animasjonen
             {transform: "rotate(1440deg)", marginLeft: "500px"}//Etter animasjonen
             ],{
             duration:3000,//varer i 30000millisekunder
-            direction:"alternate",//Går annenhver gang fram og tilbake
+          direction:"alternate",//Går annenhver gang fram og tilbake
             iterations:Infinity,//Uendelig
             easing:"Ease-in-out"//Tar det rolig på starten og slutten
         });
+        if (animasjonen.currentTime==3s3){
+          snowball.style.scaleX=-1;
+          console.log("tekst")
+        }
             </script>
 
 

@@ -1,0 +1,20 @@
+body{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(rgb(47,150,163),rgb(48,62,143));
+  font-family: sans-serif;
+  color: white;
+}
+.valg{display:inline;}
+.innpakning, .temperatur{
+  height: 30vh;
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.temperatur{flex-direction: column;}
+.temperatur-grader{font-size: 40px;}
